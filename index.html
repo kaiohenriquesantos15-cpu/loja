@@ -1,673 +1,1891 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3F STORE | Full Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>URBE — Loja de Streetwear | Camisas, Moletons, Conjuntos e Shorts</title>
+<meta name="description" content="URBE: streetwear pra quem vive na rua. Camisas, moletons, conjuntos, calças e shorts com modelagem urbana. Compre online com frete e troca facilitados.">
+<meta name="keywords" content="streetwear, moletom, conjunto, camisa oversized, bermuda moletom, urbe, moda urbana, roupa street">
+<meta name="author" content="URBE">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#111111">
+<link rel="canonical" href="https://urbe.store/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="URBE">
+<meta property="og:title" content="URBE — Streetwear pra quem vive na rua">
+<meta property="og:description" content="Camisas, moletons, conjuntos e shorts com visual urbano. Navegue à vontade — o cadastro só na hora da compra.">
+<meta property="og:url" content="https://urbe.store/">
+<meta property="og:image" content="https://static.bershka.net/assets/public/85ea/f474/17a34db2883b/d28eab0a7a20/02714443401-p/02714443401-p.jpg?ts=1785491587674&w=850&f=auto">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="URBE — Streetwear pra quem vive na rua">
+<meta name="twitter:description" content="Camisas, moletons, conjuntos e shorts com visual urbano.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Structured Data: Store -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ClothingStore",
+  "name": "URBE",
+  "description": "Loja de streetwear com camisas, moletons, conjuntos, calças e shorts.",
+  "url": "https://urbe.store/",
+  "inLanguage": "pt-BR",
+  "currenciesAccepted": "BRL",
+  "paymentAccepted": "Credit Card, Debit Card, Pix",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
+  }
+}
+</script>
+<style>
+  :root{
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #f5f5f5;
+    --line: #e5e5e5;
+    --line-strong: #111111;
+    --text: #111111;
+    --muted: #6b6b6b;
+    --accent: #111111;
+    --radius: 0px;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3, .logo, .btn-accent, .tab, .cat-btn, .checkout-btn, .submit-btn, .pdp-add{
+    font-family: 'Archivo Black', sans-serif;
+    text-transform: uppercase;
+  }
+
+  a{ color: inherit; text-decoration: none; }
+
+  header{
+    position: sticky; top:0; z-index: 40;
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 20px 5%;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .logo{
+    font-size: 24px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  .logo span{ 
+    display: inline-block;
+    background: var(--text);
+    color: var(--bg);
+    padding: 2px 6px;
+    margin-left: 1px;
+  }
+
+  nav.categories{ display:flex; gap: 32px; }
+  nav.categories a{
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: color .2s;
+    position: relative;
+  }
+  nav.categories a::after{
+    content:"";
+    position:absolute; left:0; bottom:-4px;
+    width:0; height:1px;
+    background: var(--text);
+    transition: width .2s;
+  }
+  nav.categories a:hover{ color: var(--text); }
+  nav.categories a:hover::after{ width:100%; }
+
+  .header-actions{ display:flex; align-items:center; gap: 24px; }
+
+  .icon-btn{
+    background:none; border:none; color: var(--text);
+    cursor:pointer; font-size: 13px;
+    display:flex; align-items:center; gap:8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: opacity .2s;
+  }
+  .icon-btn:hover{ opacity: 0.6; }
+
+  .cart-btn{
+    position: relative;
+    padding-right: 4px;
+  }
+  .cart-btn svg{
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+  .cart-count{
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 10px;
+    font-weight:700;
+    padding: 2px 6px;
+    border-radius: 20px;
+    min-width: 18px;
+    text-align: center;
+    line-height: 1.3;
+    transition: transform .25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .cart-count.bump{
+    transform: scale(1.35);
+  }
+  .cart-count.is-zero{
+    opacity: 0;
+    transform: scale(0.5);
+    pointer-events: none;
+  }
+
+  /* fly-to-cart ghost */
+  .fly-item{
+    position: fixed;
+    z-index: 9999;
+    width: 64px;
+    height: 80px;
+    border-radius: 4px;
+    overflow: hidden;
+    pointer-events: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    transition: transform .7s cubic-bezier(0.4, 0, 0.2, 1), opacity .7s ease;
+    will-change: transform, opacity;
+  }
+  .fly-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .fly-item.no-img{
+    background: #f0f0f0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 9px;
+    color: #999;
+    letter-spacing: 1px;
+  }
+
+  /* toast notification */
+  .toast-wrap{
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    pointer-events: none;
+    width: min(360px, 90vw);
+  }
+  .toast{
+    background: var(--text);
+    color: var(--bg);
+    padding: 14px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(-12px);
+    transition: opacity .25s ease, transform .25s ease;
+    text-align: center;
+  }
+  .toast.show{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .toast.success{
+    background: #111;
+  }
+  .toast.warn{
+    background: #111;
+  }
+
+  .hero{
+    padding: 110px 5% 90px;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: end;
+  }
+  .hero-content{ max-width: 640px; }
+
+  .eyebrow{
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 3.5px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    text-transform: uppercase;
+  }
+  .hero h1{
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 0.92;
+    letter-spacing: -1px;
+  }
+  .hero p{
+    color: var(--muted);
+    max-width: 420px;
+    margin-top: 28px;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .btn-accent{
+    display:inline-block;
+    margin-top: 40px;
+    background: var(--text);
+    color: var(--bg);
+    border: none;
+    padding: 16px 36px;
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    cursor:pointer;
+    transition: transform .15s ease, background .15s;
+  }
+  .btn-accent:hover{ transform: translateY(-2px); background: #333; }
+
+  .hero-side{
+    display:flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-end;
+    text-align: right;
+  }
+  .hero-stat{ font-size: 13px; color: var(--muted); letter-spacing: 1px; }
+  .hero-stat strong{
+    display:block;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 28px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .filter-bar{
+    display:flex; gap: 8px;
+    padding: 48px 5% 0;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .filter-label{
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-right: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .cat-btn{
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--muted);
+    padding: 11px 22px;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    cursor:pointer;
+    transition: all .18s;
+  }
+  .cat-btn.active, .cat-btn:hover{
+    color: var(--bg);
+    background: var(--text);
+    border-color: var(--text);
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+    padding: 40px 5% 100px;
+  }
+
+  .card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
+    cursor: pointer;
+  }
+  .card:hover{ 
+    border-color: var(--text); 
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+  }
+
+  .card-img{
+    aspect-ratio: 3/4;
+    background: var(--surface-2);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .card-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .35s ease;
+  }
+  .card:hover .card-img img{ transform: scale(1.04); }
+  .card-tag{
+    position:absolute; top:14px; left:14px;
+    background: var(--text);
+    color: var(--bg);
+    font-size: 9px;
+    letter-spacing: 1.6px;
+    font-weight: 700;
+    padding: 5px 10px;
+    z-index: 2;
+  }
+
+  .card-body{
+    padding: 18px 18px 20px;
+    display:flex; flex-direction:column; gap: 6px; flex:1;
+  }
+  .card-name{
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.35;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .card-price{ font-weight: 700; font-size: 15px; margin-top: 4px; }
+
+  .card-add{
+    margin-top: auto;
+    background: transparent;
+    border: 1px solid var(--text);
+    color: var(--text);
+    padding: 12px;
+    font-size: 11px;
+    letter-spacing: 1.4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .18s;
+    text-transform: uppercase;
+  }
+  .card-add:hover{ background: var(--text); color: var(--bg); }
+
+  .pdp{
+    position: fixed; inset:0;
+    z-index: 70;
+    background: var(--bg);
+    display:flex;
+    opacity:0; pointer-events:none;
+    transition: opacity .25s;
+    overflow-y: auto;
+  }
+  .pdp.show{ opacity:1; pointer-events:auto; }
+
+  .pdp-inner{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 5% 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .pdp-close{
+    position: fixed;
+    top: 22px; right: 5%;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--muted);
+    cursor: pointer;
+    z-index: 71;
+    line-height: 1;
+  }
+  .pdp-close:hover{ color: var(--text); }
+
+  .pdp-gallery{ position: sticky; top: 30px; }
+  .pdp-main-img{
+    aspect-ratio: 3/4;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: 2px;
+    overflow: hidden;
+  }
+  .pdp-main-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .pdp-thumbs{
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .pdp-thumb{
+    width: 72px;
+    height: 90px;
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0;
+    transition: border-color .15s;
+  }
+  .pdp-thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .pdp-thumb.active, .pdp-thumb:hover{ border-color: var(--text); }
+
+  .pdp-info{ padding-top: 10px; }
+  .pdp-cat{
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .pdp-name{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.15;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .pdp-price{ font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .pdp-installment{ font-size: 13px; color: var(--muted); margin-bottom: 28px; }
+
+  .pdp-section{ margin-bottom: 28px; }
+  .pdp-section-title{
+    font-size: 11px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .size-options{ display: flex; flex-wrap: wrap; gap: 8px; }
+  .size-btn{
+    min-width: 48px;
+    height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .15s;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .size-btn:hover{ border-color: var(--text); }
+  .size-btn.active{
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+
+  .color-options{ display: flex; flex-wrap: wrap; gap: 10px; }
+  .color-btn{
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    position: relative;
+    transition: transform .15s, box-shadow .15s;
+    padding: 0;
+  }
+  .color-btn::after{
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--swatch);
+    border: 1px solid rgba(0,0,0,0.08);
+  }
+  .color-btn:hover{ transform: scale(1.08); }
+  .color-btn.active{
+    border-color: var(--text);
+    box-shadow: 0 0 0 1px var(--text);
+  }
+  .color-label{ font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+  .pdp-obs{
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--muted);
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+  }
+  .pdp-obs strong{
+    display: block;
+    color: var(--text);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .pdp-add{
+    width: 100%;
+    background: var(--text);
+    color: var(--bg);
+    border: none;
+    padding: 18px;
+    font-size: 13px;
+    letter-spacing: 1.8px;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: background .15s, transform .15s;
+  }
+  .pdp-add:hover{ background: #333; transform: translateY(-1px); }
+  .pdp-add:disabled{ background: #ccc; cursor: not-allowed; transform: none; }
+
+  .pdp-hint{
+    font-size: 12px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  .overlay{
+    position: fixed; inset:0;
+    background: rgba(0,0,0,.35);
+    opacity:0; pointer-events:none;
+    transition: opacity .25s;
+    z-index: 50;
+  }
+  .overlay.show{ opacity:1; pointer-events:auto; }
+
+  .drawer{
+    position: fixed; top:0; right:0; bottom:0;
+    width: min(400px, 92vw);
+    background: var(--bg);
+    border-left: 1px solid var(--line);
+    transform: translateX(100%);
+    transition: transform .3s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 51;
+    display:flex; flex-direction:column;
+  }
+  .drawer.show{ transform: translateX(0); }
+
+  .drawer-head{
+    padding: 24px 26px;
+    border-bottom: 1px solid var(--line);
+    display:flex; justify-content:space-between; align-items:center;
+  }
+  .drawer-head h3{ font-size: 15px; letter-spacing: 1.5px; }
+  .close-btn{
+    background:none; border:none; color:var(--muted);
+    font-size:24px; cursor:pointer; line-height:1;
+  }
+  .close-btn:hover{ color: var(--text); }
+
+  .drawer-items{ flex:1; overflow-y:auto; padding: 8px 26px; }
+  .empty-msg{
+    color: var(--muted); font-size: 13px;
+    padding: 50px 0; text-align:center;
+    line-height: 1.6;
+  }
+
+  .cart-item{
+    display:flex; gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .cart-item .thumb{
+    width: 64px; height: 76px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    flex-shrink:0;
+    overflow: hidden;
+  }
+  .cart-item .thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .cart-item .info{ flex:1; }
+  .cart-item .info .name{ font-size: 13px; font-weight:600; line-height:1.3; }
+  .cart-item .info .meta{ font-size: 11px; color: var(--muted); margin-top:3px; }
+  .qty-row{ display:flex; align-items:center; gap:10px; margin-top:10px; }
+  .qty-row button{
+    width:24px; height:24px;
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    color: var(--text);
+    cursor:pointer;
+    font-size: 14px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .qty-row button:hover{ background: var(--surface-2); }
+  .qty-row span{ font-size:13px; min-width:16px; text-align:center; font-weight:600; }
+  .item-price{ font-size:13px; font-weight:700; margin-left:auto; }
+  .remove-item{
+    background:none; border:none; color: var(--muted);
+    font-size: 11px; text-decoration: underline;
+    cursor:pointer; margin-top:8px;
+  }
+  .remove-item:hover{ color: var(--text); }
+
+  .drawer-foot{
+    padding: 22px 26px 28px;
+    border-top: 1px solid var(--line);
+  }
+  .subtotal-row{
+    display:flex; justify-content:space-between;
+    font-size: 14px; margin-bottom: 18px;
+    align-items: baseline;
+  }
+  .subtotal-row strong{ font-size:18px; }
+
+  .checkout-btn{
+    width:100%;
+    background: var(--text);
+    color: var(--bg);
+    border:none;
+    padding: 16px;
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    cursor:pointer;
+    transition: background .15s, transform .15s;
+  }
+  .checkout-btn:hover{ background: #333; transform: translateY(-1px); }
+
+  .modal{
+    position: fixed; inset:0;
+    display:flex; align-items:center; justify-content:center;
+    z-index: 60;
+    opacity:0; pointer-events:none;
+    transition: opacity .2s;
+  }
+  .modal.show{ opacity:1; pointer-events:auto; }
+  .modal-box{
+    background: var(--bg);
+    border: 1px solid var(--line);
+    width: min(400px, 92vw);
+    padding: 40px 34px 34px;
+    position:relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+  }
+  .modal-box .close-btn{ position:absolute; top:16px; right:18px; }
+
+  .modal-note{
+    font-size: 11px; color: var(--muted);
+    letter-spacing: 1.8px; margin-bottom: 8px; font-weight:700;
+    text-transform: uppercase;
+  }
+  .modal-box h2{ font-size: 24px; margin-bottom: 26px; }
+
+  .tabs{ display:flex; border-bottom: 1px solid var(--line); margin-bottom: 26px; }
+  .tab{
+    flex:1; text-align:center;
+    padding: 12px 0; font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--muted);
+    cursor:pointer;
+    border-bottom: 2px solid transparent;
+    background:none; border-top:none; border-left:none; border-right:none;
+  }
+  .tab.active{ color: var(--text); border-bottom-color: var(--text); }
+
+  .form-panel{ display:none; flex-direction:column; gap:16px; }
+  .form-panel.active{ display:flex; }
+
+  .form-panel label{
+    font-size: 11px; letter-spacing: 1.2px; color: var(--muted);
+    display:block; margin-bottom: 7px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .form-panel input{
+    width:100%;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    color: var(--text);
+    padding: 13px 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+  }
+  .form-panel input:focus{ outline: none; border-color: var(--text); }
+  .form-panel input::placeholder{ color: #b0b0b0; }
+
+  .submit-btn{
+    margin-top: 8px;
+    background: var(--text);
+    color: var(--bg);
+    border:none;
+    padding: 15px;
+    font-size: 12px;
+    letter-spacing: 1.8px;
+    cursor:pointer;
+    transition: background .15s, transform .15s;
+  }
+  .submit-btn:hover{ background: #333; transform: translateY(-1px); }
+
+  footer{
+    padding: 40px 5%;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12px;
+    text-align:center;
+    line-height: 1.8;
+  }
+  footer strong{ color: var(--text); }
+  footer p + p{ margin-top: 4px; }
+
+  @media (max-width: 900px){
+    .hero{
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding: 80px 5% 70px;
+    }
+    .hero-side{
+      align-items: flex-start;
+      text-align: left;
+      flex-direction: row;
+      gap: 40px;
+    }
+    .pdp-inner{
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding-top: 60px;
+    }
+    .pdp-gallery{ position: static; }
+  }
+
+  @media (max-width: 720px){
+    nav.categories{ display:none; }
+    .hero h1{ font-size: clamp(36px, 10vw, 52px); }
+    .filter-bar{ padding-top: 32px; }
+  }
+</style>
 </head>
-
 <body>
-    <!-- Toast notifications -->
-    <div id="toast" class="toast"></div>
 
-    <!-- LOGIN / CADASTRO MODAL -->
-    <div id="login-modal" class="modal-overlay">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeLoginModal()">×</span>
-            <div id="login-form">
-                <h2>Entrar na 3F STORE</h2>
-                <input type="email" id="login-email" placeholder="Seu e-mail">
-                <input type="password" id="login-pass" placeholder="Sua senha">
-                <button class="buy-btn" onclick="handleAuth('login')">Entrar</button>
-                <p>Não tem conta? <a href="#" onclick="switchForm('register')">Cadastre-se</a></p>
-            </div>
-            <div id="register-form" style="display: none;">
-                <h2>Criar Conta</h2>
-                <input type="text" id="reg-name" placeholder="Nome completo">
-                <input type="email" id="reg-email" placeholder="E-mail">
-                <input type="password" id="reg-pass" placeholder="Senha">
-                <h3 class="address-title">Endereço de Entrega</h3>
-                <input type="text" id="reg-cep" placeholder="CEP">
-                <input type="text" id="reg-street" placeholder="Rua e Número">
-                <input type="text" id="reg-city" placeholder="Cidade/Estado">
-                <button class="buy-btn" onclick="handleAuth('register')">Finalizar Cadastro</button>
-                <p>Já tem conta? <a href="#" onclick="switchForm('login')">Fazer Login</a></p>
-            </div>
-        </div>
+<header role="banner">
+  <div class="logo" onclick="closePDP()" aria-label="URBE — página inicial">URB<span>E</span></div>
+  <nav class="categories" aria-label="Categorias principais">
+    <a href="#" data-cat="Camisas">Camisas</a>
+    <a href="#" data-cat="Calças">Calças</a>
+    <a href="#" data-cat="Moletons">Moletons</a>
+    <a href="#" data-cat="Shorts">Shorts</a>
+    <a href="#" data-cat="Conjuntos">Conjuntos</a>
+  </nav>
+  <div class="header-actions">
+    <button class="icon-btn" onclick="openAuth()">Entrar</button>
+    <button class="icon-btn cart-btn" id="cartBtn" onclick="toggleCart(true)" aria-label="Carrinho">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 6h15l-1.5 9h-12z"/>
+        <path d="M6 6L5 3H2"/>
+        <circle cx="9" cy="20" r="1.2" fill="currentColor" stroke="none"/>
+        <circle cx="18" cy="20" r="1.2" fill="currentColor" stroke="none"/>
+      </svg>
+      <span class="cart-count is-zero" id="cartCount">0</span>
+    </button>
+  </div>
+  <div class="toast-wrap" id="toastWrap"></div>
+</header>
+
+<main id="conteudo">
+<section class="hero" aria-label="Destaque da coleção">
+  <div class="hero-content">
+    <p class="eyebrow">Coleção atual</p>
+    <h1>Peças pra quem<br>vive na rua</h1>
+    <p>Streetwear com camisas, calças, moletons, shorts e conjuntos pensados pro dia a dia. Navegue à vontade — o cadastro só aparece na hora de fechar a compra.</p>
+    <button class="btn-accent" onclick="document.getElementById('grid').scrollIntoView({behavior:'smooth'})">Ver produtos</button>
+  </div>
+  <div class="hero-side">
+    <div class="hero-stat"><strong>19</strong>Peças na coleção</div>
+    <div class="hero-stat"><strong>5</strong>Categorias</div>
+  </div>
+</section>
+
+<div class="filter-bar" id="filterBar" role="navigation" aria-label="Filtrar por categoria">
+  <span class="filter-label">Filtrar</span>
+  <button class="cat-btn active" data-cat="Todos">Todos</button>
+  <button class="cat-btn" data-cat="Camisas">Camisas</button>
+  <button class="cat-btn" data-cat="Calças">Calças</button>
+  <button class="cat-btn" data-cat="Moletons">Moletons</button>
+  <button class="cat-btn" data-cat="Shorts">Shorts</button>
+  <button class="cat-btn" data-cat="Conjuntos">Conjuntos</button>
+</div>
+
+<section class="grid" id="grid" aria-label="Catálogo de produtos"></section>
+</main>
+
+<footer>
+  <p><strong>URBE</strong> — streetwear pra quem vive na rua.</p>
+  <p>Camisas · Calças · Moletons · Shorts · Conjuntos</p>
+  <p>© 2026 URBE. Todos os direitos reservados.</p>
+</footer>
+
+<div class="pdp" id="pdp">
+  <button class="pdp-close" onclick="closePDP()">×</button>
+  <div class="pdp-inner">
+    <div class="pdp-gallery">
+      <div class="pdp-main-img" id="pdpImg">IMAGEM EM BREVE</div>
+      <div class="pdp-thumbs" id="pdpThumbs"></div>
     </div>
-
-    <!-- CARRINHO MODAL -->
-    <div id="cart-modal" class="modal-overlay">
-        <div class="modal-content cart-modal-content">
-            <span class="close-modal" onclick="closeCartModal()">×</span>
-            <h2>Seu Carrinho</h2>
-            <div id="cart-items" class="cart-items"></div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total:</span>
-                    <strong id="cart-total-value">R$ 0,00</strong>
-                </div>
-                <button class="buy-btn" id="checkout-btn" onclick="checkout()">Finalizar Compra</button>
-                <button class="secondary-btn" onclick="clearCart()">Limpar Carrinho</button>
-            </div>
-        </div>
+    <div class="pdp-info">
+      <div class="pdp-cat" id="pdpCat"></div>
+      <h1 class="pdp-name" id="pdpName"></h1>
+      <div class="pdp-price" id="pdpPrice"></div>
+      <div class="pdp-installment" id="pdpInstallment"></div>
+      <div class="pdp-section">
+        <div class="pdp-section-title">Tamanho</div>
+        <div class="size-options" id="pdpSizes"></div>
+      </div>
+      <div class="pdp-section" id="pdpColorSection">
+        <div class="pdp-section-title">Cor</div>
+        <div class="color-options" id="pdpColors"></div>
+        <div class="color-label" id="pdpColorLabel"></div>
+      </div>
+      <div class="pdp-obs" id="pdpObs"></div>
+      <button class="pdp-add" id="pdpAddBtn" onclick="addFromPDP()">Adicionar ao carrinho</button>
+      <div class="pdp-hint" id="pdpHint">Selecione tamanho e cor</div>
     </div>
+  </div>
+</div>
 
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">3F <span>STORE</span></div>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="#camisas">Camisas</a></li>
-                    <li><a href="#calcas">Calças</a></li>
-                    <li><a href="#moletons">Moletons</a></li>
-                    <li><a href="#shorts">Shorts</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <div id="user-area" class="user-area">
-                    <button class="login-btn" onclick="openLoginModal()">Entrar</button>
-                </div>
-                <div class="cart-icon" onclick="openCartModal()" title="Abrir carrinho">
-                    🛒 <span id="cart-count">0</span>
-                </div>
-            </div>
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+<aside class="drawer" id="cartDrawer">
+  <div class="drawer-head">
+    <h3>Seu carrinho</h3>
+    <button class="close-btn" onclick="toggleCart(false)">×</button>
+  </div>
+  <div class="drawer-items" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="subtotal-row">
+      <span>Subtotal</span>
+      <strong id="cartSubtotal">R$ 0,00</strong>
+    </div>
+    <button class="checkout-btn" onclick="handleCheckout()">Finalizar compra</button>
+  </div>
+</aside>
+
+<div class="modal" id="authModal">
+  <div class="modal-box">
+    <button class="close-btn" onclick="closeAll()">×</button>
+    <div class="modal-note" id="authNote">Só mais um passo</div>
+    <h2>Entre pra finalizar</h2>
+    <div class="tabs">
+      <button class="tab active" data-tab="login" onclick="switchTab('login')">Entrar</button>
+      <button class="tab" data-tab="cadastro" onclick="switchTab('cadastro')">Cadastrar</button>
+    </div>
+    <form class="form-panel active" id="loginPanel" onsubmit="return handleAuthSubmit(event)">
+      <div>
+        <label>E-mail</label>
+        <input type="email" required placeholder="seuemail@exemplo.com">
+      </div>
+      <div>
+        <label>Senha</label>
+        <input type="password" required placeholder="••••••••">
+      </div>
+      <button class="submit-btn" type="submit">Entrar</button>
+    </form>
+    <form class="form-panel" id="cadastroPanel" onsubmit="return handleAuthSubmit(event)">
+      <div>
+        <label>Nome completo</label>
+        <input type="text" required placeholder="Seu nome">
+      </div>
+      <div>
+        <label>E-mail</label>
+        <input type="email" required placeholder="seuemail@exemplo.com">
+      </div>
+      <div>
+        <label>Senha</label>
+        <input type="password" required placeholder="Crie uma senha">
+      </div>
+      <button class="submit-btn" type="submit">Criar conta</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  const products = [
+    {
+      id: 1,
+      name: "Camiseta Boxy Estampada",
+      cat: "Camisas",
+      price: 129.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [],
+      obs: "Modelagem boxy com estampa frontal. Caimento solto e ombros caídos. 100% algodão. Ideal pro dia a dia urbano.",
+      images: [
+        "https://static.bershka.net/assets/public/85ea/f474/17a34db2883b/d28eab0a7a20/02714443401-p/02714443401-p.jpg?ts=1785491587674&w=850&f=auto",
+        "https://static.bershka.net/assets/public/9d56/db95/2d6b42c581b3/d7c98099a609/02514678808-p/02514678808-p.jpg?ts=1785491587947&w=850&f=auto",
+        "https://static.bershka.net/assets/public/9673/ed71/95e648ff94a7/7cb9b12689ea/02714443401-a4o/02714443401-a4o.jpg?ts=1783080325931&w=850&f=auto",
+        "https://static.bershka.net/assets/public/a175/f6bd/07664007983b/3375afc47140/02714443401-b/02714443401-b.jpg?ts=1783080325719&w=850&f=auto"
+      ]
+    },
+    {
+      id: 2,
+      name: "Camisa Lisa",
+      cat: "Camisas",
+      price: 99.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [
+        {
+          name: "Branca",
+          hex: "#f5f5f5",
+          images: [
+            "https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg?ts=1764666002326&w=850&f=auto",
+            "https://static.bershka.net/assets/public/5515/76c1/0c8a4a44a5cc/72ab969ef70a/00069154250-a1t/00069154250-a1t.jpg?ts=1764666002440&w=850&f=auto",
+            "https://static.bershka.net/assets/public/0e3c/7776/fdbf4105b127/0155aa573671/00069154250-a4o/00069154250-a4o.jpg?ts=1777561199462&w=850&f=auto",
+            "https://static.bershka.net/assets/public/4882/0e2f/ea4b48f8a728/e6f06e51e170/00069154250-b/00069154250-b.jpg?ts=1777561199699&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Preta",
+          hex: "#111111",
+          images: [
+            "https://static.bershka.net/assets/public/96de/bcc2/9bb34c3daabb/42285aa898fc/00069154800-a1t/00069154800-a1t.jpg?ts=1771579451166&w=850&f=auto",
+            "https://static.bershka.net/assets/public/60d4/0761/ab8c4cbf9b1c/a420f861808e/00069154800-a2d/00069154800-a2d.jpg?ts=1771579451425&w=850&f=auto",
+            "https://static.bershka.net/assets/public/5fd2/9b01/6e904e3a9534/43296ea8eb62/00069154800-a4o/00069154800-a4o.jpg?ts=1777561189280&w=850&f=auto",
+            "https://static.bershka.net/assets/public/55e3/3ef2/cc0745deae40/f44c92f73e48/00069154800-b/00069154800-b.jpg?ts=1777561196309&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Marinho",
+          hex: "#1a2a4a",
+          images: [
+            "https://static.bershka.net/assets/public/27a8/9a0e/79334c638290/308bad28ca78/00069154401-p/00069154401-p.jpg?ts=1776077054968&w=850&f=auto",
+            "https://static.bershka.net/assets/public/d909/29d4/18b5416d9463/2ded6be2d514/00069154401-a3o/00069154401-a3o.jpg?ts=1776077070828&w=850&f=auto",
+            "https://static.bershka.net/assets/public/ab3b/3b2e/76ce4d08b108/dcc9166ad174/00069154401-a4o/00069154401-a4o.jpg?ts=1777561199695&w=850&f=auto",
+            "https://static.bershka.net/assets/public/9c4a/29b2/58ce4d58831e/dddbb15b3173/00069154401-b/00069154401-b.jpg?ts=1777561199762&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Marrom",
+          hex: "#5c3d2e",
+          images: [
+            "https://static.bershka.net/assets/public/fa7b/4059/6ccf4bc68f9e/c80af5cadf8b/00069154717-p1/00069154717-p1.jpg?ts=1773239969603&w=850&f=auto",
+            "https://static.bershka.net/assets/public/70f2/f241/97fc4910af5c/d6ac138d57c7/00069154717-a2d/00069154717-a2d.jpg?ts=1773239969703&w=850&f=auto",
+            "https://static.bershka.net/assets/public/bfd7/306b/c8bf4007b2e0/7fc7bc499c20/00069154717-a4o/00069154717-a4o.jpg?ts=1777561201774&w=850&f=auto",
+            "https://static.bershka.net/assets/public/c3a1/ba24/a6c04e4da762/9298307979e4/00069154717-b/00069154717-b.jpg?ts=1777561188136&w=850&f=auto"
+          ]
+        }
+      ],
+      obs: "Camisa lisa de modelagem regular. Tecido leve e confortável. Peça básica essencial para montar qualquer look.",
+      images: []
+    },
+    {
+      id: 3,
+      name: "Camisa Canelada",
+      cat: "Camisas",
+      price: 119.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [
+        {
+          name: "Branca",
+          hex: "#f5f5f5",
+          images: [
+            "https://static.bershka.net/assets/public/6c4a/dde3/49cd46ef823a/0b352ba34c70/02481538250-p/02481538250-p.jpg?ts=1785940206847&w=850&f=auto",
+            "https://static.bershka.net/assets/public/720e/9fe4/df46440f8ab8/f39115c2f29a/02481538250-a2d/02481538250-a2d.jpg?ts=1785940206761&w=850&f=auto",
+            "https://static.bershka.net/assets/public/2c8b/9874/15f9473f84b5/e97d611e8bfb/02481538250-a4o/02481538250-a4o.jpg?ts=1778481710877&w=850&f=auto",
+            "https://static.bershka.net/assets/public/cd3c/69dc/41cf43379830/da189792dc04/02481538250-b/02481538250-b.jpg?ts=1778481711656&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Preta",
+          hex: "#111111",
+          images: [
+            "https://static.bershka.net/assets/public/65a0/a35d/03544e02b235/fd8147e6abc6/02481538800-p/02481538800-p.jpg?ts=1785940092422&w=850&f=auto",
+            "https://static.bershka.net/assets/public/54cf/eae4/c082437e89f1/f4ce824c8304/02481538800-a2d/02481538800-a2d.jpg?ts=1785940092555&w=850&f=auto",
+            "https://static.bershka.net/assets/public/5891/5dbc/a4a64dcf9959/57011a6c8720/02481538800-a4o/02481538800-a4o.jpg?ts=1778681067692&w=850&f=auto",
+            "https://static.bershka.net/assets/public/294c/73ee/964b4209b0c8/970f3fd5f33c/02481538800-b/02481538800-b.jpg?ts=1778681066847&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Cinza",
+          hex: "#9a9a9a",
+          images: [
+            "https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto",
+            "https://static.bershka.net/assets/public/bd22/a662/6c6e45b4b218/916c27801d1b/02481538810-a3o/02481538810-a3o.jpg?ts=1783526442733&w=850&f=auto",
+            "https://static.bershka.net/assets/public/b16f/3f70/5d944bcebfb1/cabe6f5c70d9/02481001810-a4o/02481001810-a4o.jpg?ts=1778481712058&w=850&f=auto",
+            "https://static.bershka.net/assets/public/cc17/274e/c90c43329032/9fd973ab4c50/02481001810-b/02481001810-b.jpg?ts=1778481711714&w=850&f=auto"
+          ]
+        }
+      ],
+      obs: "Camisa canelada de caimento justo. Textura em relevo e toque macio. Ideal para usar sozinha ou em camada.",
+      images: []
+    },
+    {
+      id: 4,
+      name: "Calça Sweatshirt Cinza",
+      cat: "Calças",
+      price: 189.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [],
+      obs: "Calça sweatshirt cinza com caimento confortável. Cós elástico e tecido macio. Combina com o conjunto sweatshirt da mesma linha.",
+      images: [
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0185-2-4061c41e54d9bf71e417603304252029-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_3369-6a7e8997f340dea84117603391671932-1024-1024.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0187-3-fcc8b2c484d37619aa17603304262382-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0189-4-954e29c4cd33e40dcf17603304264200-640-0.webp"
+      ]
+    },
+    {
+      id: 5,
+      name: "Calça Sweatshirt Preta",
+      cat: "Calças",
+      price: 189.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [],
+      obs: "Calça sweatshirt preta. Modelagem solta e toque macio. Peça única, sem variação de cor.",
+      images: [
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_3301-3301b4ab7b97289bfe17642829403957-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_3222-143e5c5c562737b3d417642829398094-1024-1024.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_9511-6ee67bac73fc2e402d17767250136586-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_9510-59e6d7e4a5f5079d5517767250131851-640-0.webp"
+      ]
+    },
+    {
+      id: 6,
+      name: "Calça Jeans Baggy",
+      cat: "Calças",
+      price: 219.90,
+      sizes: ["38", "40", "42", "44", "46"],
+      colors: [
+        {
+          name: "Preta",
+          hex: "#111111",
+          images: [
+            "https://static.bershka.net/assets/public/1c17/31cb/df1242af873d/c986019f5106/02982054800-p/02982054800-p.jpg?ts=1783591619734&w=850&f=auto",
+            "https://static.bershka.net/assets/public/d246/7658/ef204fa6a88c/568e1be40b35/02982054800-a2d/02982054800-a2d.jpg?ts=1783591619910&w=850&f=auto",
+            "https://static.bershka.net/assets/public/9b77/cd97/ef67489f96c7/23b3a704239b/02982054800-a4o/02982054800-a4o.jpg?ts=1781784566233&w=850&f=auto",
+            "https://static.bershka.net/assets/public/3b4e/6e5c/2f0640ca80f0/aafc7284b669/02982054800-b/02982054800-b.jpg?ts=1781784565892&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Cinza",
+          hex: "#8a8a8a",
+          images: [
+            "https://static.bershka.net/assets/public/0467/7835/b794472a82ca/39d73247a0fc/02982054811-p/02982054811-p.jpg?ts=1783072153711&w=850&f=auto",
+            "https://static.bershka.net/assets/public/484d/bdc8/0e7b43b7b8f7/5dc3a266010f/02982054811-a2d/02982054811-a2d.jpg?ts=1783072153145&w=850&f=auto",
+            "https://static.bershka.net/assets/public/f824/bde6/6d61454ab529/8606c7a88ce1/02982054811-a4o/02982054811-a4o.jpg?ts=1781524384523&w=850&f=auto",
+            "https://static.bershka.net/assets/public/c3f7/d5dc/53554542932b/2cd58aa81c70/02982054811-b/02982054811-b.jpg?ts=1781524384699&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Azul",
+          hex: "#3a5a8a",
+          images: [
+            "https://static.bershka.net/assets/public/6515/5861/36f34ff6a7ba/3155882b6db3/02982054428-p/02982054428-p.jpg?ts=1783591610146&w=850&f=auto",
+            "https://static.bershka.net/assets/public/ae26/8076/d7934dcca30d/97fe6de22e86/02982054428-a2d/02982054428-a2d.jpg?ts=1783591609891&w=850&f=auto",
+            "https://static.bershka.net/assets/public/7d2f/3677/1d3e49edb821/8e96f29a98ac/02982054428-a4o/02982054428-a4o.jpg?ts=1781784566425&w=850&f=auto",
+            "https://static.bershka.net/assets/public/cde5/5cb2/d85d4290bb10/8a7e6433a9f5/02982054428-b/02982054428-b.jpg?ts=1781784565616&w=850&f=auto"
+          ]
+        }
+      ],
+      obs: "Jeans baggy com caimento amplo. Cintura média e barra generosa. Street clássico atualizado.",
+      images: []
+    },
+    {
+      id: 7,
+      name: "Moletom Double Zip",
+      cat: "Moletons",
+      price: 249.90,
+      sizes: ["P", "M", "G", "GG", "XG"],
+      colors: [
+        {
+          name: "Camuflado",
+          hex: "#5a6b4a",
+          images: [
+            "https://www.starterpack.com.br/cdn/shop/files/conj_camu_1.jpg?v=1780602857&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/conj_camu_2.jpg?v=1780602857&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/details_camu_1.jpg?v=1780602857&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/double_zip_camu.jpg?v=1774547918&width=1600"
+          ]
+        },
+        {
+          name: "Preto",
+          hex: "#111111",
+          images: [
+            "https://www.starterpack.com.br/cdn/shop/files/conj_preto5_78735bd3-5802-4fb2-8ab7-f0fdedf206b1.jpg?v=1780602760&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/details_preto_1.jpg?v=1780602760&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/conj_preto_4.jpg?v=1780602760&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/double_zip_preto.jpg?v=1774548419&width=1600"
+          ]
+        },
+        {
+          name: "Cinza",
+          hex: "#8a8a8a",
+          images: [
+            "https://www.starterpack.com.br/cdn/shop/files/details_casaco_cinza_3.jpg?v=1780603845&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/details_cinza_2.jpg?v=1780603845&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/details_casaco_cinza_2.jpg?v=1780603846&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/double_zip_cinza.jpg?v=1774548249&width=1600"
+          ]
+        }
+      ],
+      obs: "Moletom double zip com capuz. Modelagem oversized e zíper duplo. Peça pesada, ideal pro frio e pro street.",
+      images: []
+    },
+    {
+      id: 8,
+      name: "Moletom Careca Bordado",
+      cat: "Moletons",
+      price: 169.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [
+        { name: "Preto", hex: "#111111" },
+        { name: "Cinza Mescla", hex: "#8a8a8a" }
+      ],
+      obs: "Gola careca com detalhe bordado na frente. Caimento oversized. 80% algodão / 20% poliéster.",
+      images: []
+    },
+    {
+      id: 9,
+      name: "Moletom Oversized Cinza",
+      cat: "Moletons",
+      price: 209.90,
+      sizes: ["P", "M", "G", "GG", "XG"],
+      colors: [
+        { name: "Cinza", hex: "#9b9b9b" },
+        { name: "Preto", hex: "#111111" }
+      ],
+      obs: "Modelagem bem oversized. Ombros caídos. Tecido macio e pesado. Peça assinatura da temporada.",
+      images: []
+    },
+    {
+      id: 10,
+      name: "Bermuda Moletom Baggy",
+      cat: "Shorts",
+      price: 149.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [
+        {
+          name: "Preto",
+          hex: "#111111",
+          images: [
+            "https://www.starterpack.com.br/cdn/shop/files/conj_berma_1.jpg?v=1780602494&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/bermuda_preta_1.jpg?v=1780602495&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/berma_preta_2.jpg?v=1780602494&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/1a5f9423af02923592f13aee3e55ab6d_073e0c29-5ac6-4f29-993b-c54d49c76169.jpg?v=1775069885&width=1600"
+          ]
+        },
+        {
+          name: "Cinza",
+          hex: "#8a8a8a",
+          images: [
+            "https://www.starterpack.com.br/cdn/shop/files/conj_cinza_2.jpg?v=1780603788&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/conj_cinza_4.jpg?v=1780603789&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/conj_cinza_1.jpg?v=1780603789&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/4a17a9edd5d790fb3a979051db124548_e29a227e-961a-4cff-afb3-63b0198f9ee1.jpg?v=1775069882&width=1600"
+          ]
+        },
+        {
+          name: "Camuflado",
+          hex: "#5a6b4a",
+          images: [
+            "https://www.starterpack.com.br/cdn/shop/files/conj_camu_1_e5190d1f-3d1c-4d33-8c6e-f9ba0e85cb64.jpg?v=1780602901&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/bermuda_camu_1.jpg?v=1780602901&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/bermuda_camu_2.jpg?v=1780602901&width=1600",
+            "https://www.starterpack.com.br/cdn/shop/files/255cf1a04df821d25c329671773e9f4b_5419ffc1-b773-43a8-9380-06747035047a.jpg?v=1775069889&width=1600"
+          ]
+        }
+      ],
+      obs: "Bermuda moletom baggy com caimento solto. Cós elástico e bolsos laterais. Combina com o Moletom Double Zip da mesma linha.",
+      images: []
+    },
+    {
+      id: 11,
+      name: "Bermuda Jeans Skater",
+      cat: "Shorts",
+      price: 139.90,
+      sizes: ["38", "40", "42", "44", "46"],
+      colors: [
+        {
+          name: "Preta",
+          hex: "#111111",
+          images: [
+            "https://static.bershka.net/assets/public/401c/d282/12614db180ca/ffd142190c37/01184335800-p/01184335800-p.jpg?ts=1775137315863&w=850&f=auto",
+            "https://static.bershka.net/assets/public/449a/1515/1a8f4344aabf/b8763afdf9e9/01184335800-a2d/01184335800-a2d.jpg?ts=1775137315872&w=850&f=auto",
+            "https://static.bershka.net/assets/public/e345/9504/a8664e40954a/f23d509ddb70/01184335800-a4o/01184335800-a4o.jpg?ts=1768905257170&w=850&f=auto",
+            "https://static.bershka.net/assets/public/7236/4aa7/aa144cd796f4/759a331929f3/01184335800-b/01184335800-b.jpg?ts=1768905256620&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Branca",
+          hex: "#f5f5f5",
+          images: [
+            "https://static.bershka.net/assets/public/6a0c/1466/40a8404b9630/e2ccf58567ca/01184335250-a1t/01184335250-a1t.jpg?ts=1780049071070&w=850&f=auto",
+            "https://static.bershka.net/assets/public/780e/b0f4/434f476f88f8/6ceb88681e6f/01184335250-p/01184335250-p.jpg?ts=1780049071295&w=850&f=auto",
+            "https://static.bershka.net/assets/public/de64/10c2/57064003b9f7/a65c0fe4223f/01184335250-a4o/01184335250-a4o.jpg?ts=1773329423805&w=850&f=auto",
+            "https://static.bershka.net/assets/public/a1b1/2695/40e84907b68d/46e7361c79f3/01184335250-b/01184335250-b.jpg?ts=1773329425314&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Cinza",
+          hex: "#8a8a8a",
+          images: [
+            "https://static.bershka.net/assets/public/bb56/be0b/b8a7426a8e93/7b76676c54d0/01184335811-p/01184335811-p.jpg?ts=1775137269404&w=850&f=auto",
+            "https://static.bershka.net/assets/public/967f/41bd/db69474084c3/33815c088de7/01184335811-a1t/01184335811-a1t.jpg?ts=1775137268464&w=850&f=auto",
+            "https://static.bershka.net/assets/public/6128/73b1/cc4c49bf9957/9046baef91fb/01184335811-a4o/01184335811-a4o.jpg?ts=1768905257801&w=850&f=auto",
+            "https://static.bershka.net/assets/public/bdf8/7e64/78c542d7aef2/17edad77eb78/01184335811-b/01184335811-b.jpg?ts=1768905257494&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Azul Claro",
+          hex: "#7a9ab8",
+          images: [
+            "https://static.bershka.net/assets/public/831e/27a6/2ac44e45b5af/8d5ede9ced9e/01184335433-p/01184335433-p.jpg?ts=1775137307374&w=850&f=auto",
+            "https://static.bershka.net/assets/public/04e8/3165/e8594833beca/97d433ed3ad4/01184335433-a1t/01184335433-a1t.jpg?ts=1775137308075&w=850&f=auto",
+            "https://static.bershka.net/assets/public/87fe/0bcd/7c764fb8a415/4fd79a843907/01184335433-a4o/01184335433-a4o.jpg?ts=1768905256775&w=850&f=auto",
+            "https://static.bershka.net/assets/public/08be/ea21/3d254c31b7af/fb59eec09a67/01184335433-b/01184335433-b.jpg?ts=1768905256973&w=850&f=auto"
+          ]
+        },
+        {
+          name: "Azul Lavado",
+          hex: "#4a6a8a",
+          images: [
+            "https://static.bershka.net/assets/public/1614/095f/45ad429c84b7/d78ed34687a9/01184335426-p/01184335426-p.jpg?ts=1775137301935&w=850&f=auto",
+            "https://static.bershka.net/assets/public/87f8/0360/60bd4eb88d79/b42f6f168573/01184335426-a2d/01184335426-a2d.jpg?ts=1775137301448&w=850&f=auto",
+            "https://static.bershka.net/assets/public/507e/947b/66f645379088/71a9ad72ee9b/01184335426-a4o/01184335426-a4o.jpg?ts=1770903127097&w=850&f=auto",
+            "https://static.bershka.net/assets/public/cab2/8990/b9a4442b8930/704019ed29e6/01184335426-b/01184335426-b.jpg?ts=1770903126950&w=850&f=auto"
+          ]
+        }
+      ],
+      obs: "Bermuda jeans skater com modelagem ampla. Cintura média e caimento solto. Street clássico.",
+      images: []
+    },
+    {
+      id: 12,
+      name: "Calça Alfaiataria Baggy",
+      cat: "Calças",
+      price: 229.90,
+      sizes: ["38", "40", "42", "44", "46"],
+      colors: [],
+      obs: "Calça alfaiataria baggy com caimento amplo. Tecido estruturado e visual contemporâneo. Peça única.",
+      images: [
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_7318-e0a3195eef9787561e17719473551574-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_7319-16622ee9ad1e80104f17719473551363-1024-1024.webp",
+        "https://static.bershka.net/assets/public/e653/01e6/157e4f999baa/2d153c8d1fe0/02742140800-a4o/02742140800-a4o.jpg?ts=1780576707389&w=850&f=auto",
+        "https://static.bershka.net/assets/public/c3c4/4dc8/149a44219097/b804d2b6b0ea/02742140800-b/02742140800-b.jpg?ts=1780576707481&w=850&f=auto"
+      ]
+    },
+    {
+      id: 13,
+      name: "Conjunto Verde Militar",
+      cat: "Conjuntos",
+      price: 279.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [],
+      obs: "Conjunto completo em verde militar. Moletom + calça com caimento solto. Peça única, sem variação de cor.",
+      images: [
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_9254-b4fc3936c47edd7a3517307639672214-1024-1024.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_4871-71715f0f9b15f885ac17307639720479-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_2265-ce1db0777858fb130c17307639686981-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_2915-7bf9a166d1e330630f17388150652555-640-0.webp"
+      ]
+    },
+    {
+      id: 14,
+      name: "Conjunto Preto",
+      cat: "Conjuntos",
+      price: 279.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [],
+      obs: "Conjunto completo preto. Moletom + calça. Visual clean e versátil pro dia a dia.",
+      images: [
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_9282-446993477b589ba8aa17307782268905-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_9283-a62219ae94fb3485ac17307782273777-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_9284-580e62eb81d25a081917307782270667-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_4744-a5b08892daf93a4d1a17307782324646-1024-1024.webp"
+      ]
+    },
+    {
+      id: 15,
+      name: "Conjunto Azul Royal",
+      cat: "Conjuntos",
+      price: 279.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [],
+      obs: "Conjunto azul royal. Moletom + calça com caimento confortável. Cor forte e marcante.",
+      images: [
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0055-2-93b414c5c5050874a517603228482900-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0062-2-432483773d34e3caa517603228483898-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0060-2-2-eb9e6890edb39425a517603229587934-1024-1024.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0073-2-a5c7277f5a4cd2af7917603228488714-640-0.webp"
+      ]
+    },
+    {
+      id: 16,
+      name: "Conjunto Azul Bebê",
+      cat: "Conjuntos",
+      price: 279.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [],
+      obs: "Conjunto azul bebê. Tom suave e moderno. Ideal pra looks casuais e confortáveis.",
+      images: [
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0084-2-d895a1ac4e6dbc359e17603226112163-1024-1024.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0094-2-537eaf2c920759543d17603226473417-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0090-2-2-c75d045ed29072891017603227660823-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0101-2-2-e212d89336a4778f1517603227649242-640-0.webp"
+      ]
+    },
+    {
+      id: 17,
+      name: "Conjunto Vermelho",
+      cat: "Conjuntos",
+      price: 279.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [],
+      obs: "Conjunto vermelho. Destaque imediato no visual. Moletom + calça no mesmo tom.",
+      images: [
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_6489-d364af6b68dd2eb66517388200700803-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_6492-5b2e3df9ffc046837717388200703837-1024-1024.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_2650-2b3360b7359e49239417388200732273-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_7413-fca29acafe8898a9a217388200459438-640-0.webp"
+      ]
+    },
+    {
+      id: 18,
+      name: "Conjunto Sweatshirt Cinza",
+      cat: "Conjuntos",
+      price: 289.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [],
+      obs: "Conjunto sweatshirt cinza. Textura mais estruturada e caimento premium.",
+      images: [
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0158-2-63d66ec6b3a7c3aade17603282853217-1024-1024.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0178-2-3c952a94501256a22117603282868634-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0319-4-e423badc97a9e0cd9617603282850169-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_0165-31182674c2477b1ecc17603282874088-640-0.webp"
+      ]
+    },
+    {
+      id: 19,
+      name: "Conjunto Sweatshirt Preto",
+      cat: "Conjuntos",
+      price: 289.90,
+      sizes: ["P", "M", "G", "GG"],
+      colors: [],
+      obs: "Conjunto sweatshirt preto. Visual clean e sofisticado. Sem opção de cor — peça única.",
+      images: [
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_9510-be6f103d2cd481fe8a17766521502066-1024-1024.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_9513-6752cd3f83317daab017766521500373-640-0.webp",
+        "https://acdn-us.mitiendanube.com/stores/005/437/263/products/img_1124-46845b5ae45900fb1b17795420601031-640-0.webp"
+      ]
+    }
+  ];
+
+  let cart = {};
+  let isLoggedIn = false;
+  let currentProduct = null;
+  let selectedSize = null;
+  let selectedColor = null;
+
+  const grid = document.getElementById('grid');
+  const cartItemsEl = document.getElementById('cartItems');
+  const cartCountEl = document.getElementById('cartCount');
+  const cartSubtotalEl = document.getElementById('cartSubtotal');
+
+  function formatPrice(v){
+    return v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  }
+
+  function getProductCover(p){
+    if (p.images && p.images.length) return p.images[0];
+    if (p.colors && p.colors.length && p.colors[0].images && p.colors[0].images.length) {
+      return p.colors[0].images[0];
+    }
+    return null;
+  }
+
+  function productAlt(extra = ''){
+    if (!currentProduct) return 'Produto URBE';
+    return `${currentProduct.name}${extra ? ' — ' + extra : ''} | URBE streetwear`;
+  }
+
+  function renderGallery(imgs){
+    setMainImage(imgs[0] || null);
+    const thumbsEl = document.getElementById('pdpThumbs');
+    if (imgs && imgs.length > 1) {
+      thumbsEl.innerHTML = imgs.map((src, i) => 
+        `<button type="button" class="pdp-thumb ${i===0?'active':''}" aria-label="Foto ${i+1} de ${currentProduct ? currentProduct.name : 'produto'}" onclick="setMainImage('${src}'); document.querySelectorAll('.pdp-thumb').forEach(t=>t.classList.remove('active')); this.classList.add('active')">
+          <img src="${src}" alt="${productAlt('foto ' + (i+1))}" loading="lazy" width="72" height="90">
+        </button>`
+      ).join('');
+    } else {
+      thumbsEl.innerHTML = '';
+    }
+  }
+
+  function renderProducts(filter = "Todos"){
+    grid.innerHTML = "";
+    const list = filter === "Todos" ? products : products.filter(p => p.cat === filter);
+    list.forEach(p => {
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.setAttribute('itemscope', '');
+      card.setAttribute('itemtype', 'https://schema.org/Product');
+      card.onclick = () => openPDP(p.id);
+      const cover = getProductCover(p);
+      const altText = `${p.name} — ${p.cat} URBE`;
+      const imgHtml = cover
+        ? `<img src="${cover}" alt="${altText}" loading="lazy" width="400" height="533" itemprop="image">`
+        : `<span aria-hidden="true">IMAGEM EM BREVE</span>`;
+      card.innerHTML = `
+        <div class="card-img">
+          <span class="card-tag">${p.cat}</span>
+          ${imgHtml}
         </div>
-    </header>
-
-    <main class="container">
-        <section id="camisas">
-            <h2 class="category-title">Camisas</h2>
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg"
-                            class="main-display-img" data-main="true">
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/0e3c/7776/fdbf4105b127/0155aa573671/00069154250-a4o/00069154250-a4o.jpg?ts=1777561199462&w=850"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/4882/0e2f/ea4b48f8a728/e6f06e51e170/00069154250-b/00069154250-b.jpg?ts=1777561199699&w=850"
-                                onclick="changeImage(this)" class="thumb">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Camisa lisa Branca</h3>
-                        <p class="price">R$ 100,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Camisa lisa Branca', 100)">Comprar</button>
-                    </div>
-                </article>
-                <article class="product-card" data-product="camisa-canelada">
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto"
-                            class="main-display-img" data-main="true">
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active" data-color="cinza">
-                            <img src="https://static.bershka.net/assets/public/b16f/3f70/5d944bcebfb1/cabe6f5c70d9/02481001810-a4o/02481001810-a4o.jpg?ts=1778481712058&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb" data-color="cinza">
-                            <img src="https://static.bershka.net/assets/public/cc17/274e/c90c43329032/9fd973ab4c50/02481001810-b/02481001810-b.jpg?ts=1778481711714&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb" data-color="cinza">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Camisa Canelada</h3>
-                        <p class="price">R$ 130,00</p>
-                        <div class="size-selector">
-                            <div class="color-options">
-                                <button class="color-btn active" style="background:#8a8a8a;" title="Cinza" data-color="cinza" onclick="selectColor(this)"></button>
-                                <button class="color-btn" style="background:#111;" title="Preta" data-color="preta" onclick="selectColor(this)"></button>
-                                <button class="color-btn" style="background:#f5f5f5;" title="Branca" data-color="branca" onclick="selectColor(this)"></button>
-                            </div>
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Camisa Canelada', 130)">Comprar</button>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/85ea/f474/17a34db2883b/d28eab0a7a20/02714443401-p/02714443401-p.jpg?ts=1785491587674&w=850&f=auto"
-                            class="main-display-img" data-main="true">
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/85ea/f474/17a34db2883b/d28eab0a7a20/02714443401-p/02714443401-p.jpg?ts=1785491587674&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/9673/ed71/95e648ff94a7/7cb9b12689ea/02714443401-a4o/02714443401-a4o.jpg?ts=1783080325931&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/a175/f6bd/07664007983b/3375afc47140/02714443401-b/02714443401-b.jpg?ts=1783080325719&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Camisa Boxy Estampada</h3>
-                        <p class="price">R$ 150,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Camisa Boxy Estampada', 150)">Comprar</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <section id="calcas">
-            <h2 class="category-title">Calças</h2>
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/bfec/e67f/65c94e64883e/421891c94e4b/01501732805-21-p/01501732805-21-p.jpg?ts=1776270191731&w=850&f=auto"
-                            class="main-display-img" data-main="true">
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/bfec/e67f/65c94e64883e/421891c94e4b/01501732805-21-p/01501732805-21-p.jpg?ts=1776270191731&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/2ddd/2298/e8074cd8b60b/605b94986353/01501732805-a4o/01501732805-a4o.jpg?ts=1768289593039&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/de0a/82ac/5d8d4decab2a/846f2d670fb1/01501732805-b/01501732805-b.jpg?ts=1768289592371&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Calça Moletom</h3>
-                        <p class="price">R$ 200,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Calça Jogger Moletom', 200)">Comprar</button>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/993d/f869/985d44349954/f8f247cb8885/05382352433-02-p/05382352433-02-p.jpg?ts=1772117621052&w=850&f=auto"
-                            class="main-display-img" data-main="true">
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/993d/f869/985d44349954/f8f247cb8885/05382352433-02-p/05382352433-02-p.jpg?ts=1772117621052&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/ad0d/153c/f62b4515ba30/6a825dbeda5f/05382352433-a4o/05382352433-a4o.jpg?ts=1768901982815&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/201d/f07b/ee1b427b91da/612255290dab/05382352433-b/05382352433-b.jpg?ts=1768901982907&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Calça Jeans Baggy</h3>
-                        <p class="price">R$ 220,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">38</button>
-                                <button class="size-btn" onclick="selectSize(this)">40</button>
-                                <button class="size-btn" onclick="selectSize(this)">42</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Calça Jeans Baggy', 220)">Comprar</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <section id="moletons">
-            <h2 class="category-title">Moletons</h2>
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg"
-                            class="main-display-img" data-main="true">
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/7cfd/5b3f/db60450f9324/c4743a1ff70d/01259190810-a4o/01259190810-a4o.jpg?ts=1772123507351&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/8f7a/b8d6/f7f94d93ba79/7f3188e4653f/01259190810-b/01259190810-b.jpg?ts=1772123507350&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Moletom Estampado</h3>
-                        <p class="price">R$ 200,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                                <button class="size-btn" onclick="selectSize(this)">GG</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Moletom Estampado Pro', 200)">Comprar</button>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/96fb/5eb3/1fa44fc9b766/19a9bb017b65/00847741800-p/00847741800-p.jpg?ts=1764685148735&w=850&f=auto"
-                            class="main-display-img" data-main="true">
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/96fb/5eb3/1fa44fc9b766/19a9bb017b65/00847741800-p/00847741800-p.jpg?ts=1764685148735&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/ec49/8931/16194971959b/ebd3cb618d33/00847741800-a4o/00847741800-a4o.jpg?ts=1763991084007&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/bb28/9632/a58f4c36838a/9495576e5c8d/00847741800-b/00847741800-b.jpg?ts=1763991083821&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Moletom Liso Preto</h3>
-                        <p class="price">R$ 160,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                                <button class="size-btn" onclick="selectSize(this)">GG</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Moletom Liso Preto', 160)">Comprar</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <section id="shorts">
-            <h2 class="category-title">Shorts</h2>
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg"
-                            class="main-display-img" data-main="true">
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/553b/7b69/0f19496488ad/6dfd89ff8d4d/01196534800-a4o/01196534800-a4o.jpg?ts=1771347701514&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/c922/08fc/bb864b4e8f58/60942d92c8e1/01196534800-b/01196534800-b.jpg?ts=1771347701260&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Bermuda Jeans Baggy</h3>
-                        <p class="price">R$ 120,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">38</button>
-                                <button class="size-btn" onclick="selectSize(this)">40</button>
-                                <button class="size-btn" onclick="selectSize(this)">42</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Bermuda Jeans Baggy', 120)">Comprar</button>
-                    </div>
-                </article>
-                <article class="product-card">
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/928a/7d41/019c4f41b08b/9b0e0778a1c3/01306498800-p/01306498800-p.jpg?ts=1770882998709&w=850&f=auto"
-                            class="main-display-img" data-main="true">
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/928a/7d41/019c4f41b08b/9b0e0778a1c3/01306498800-p/01306498800-p.jpg?ts=1770882998709&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/914e/32b1/02e843a08ade/08437131bf8e/01306498800-a4o/01306498800-a4o.jpg?ts=1770882983103&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/3c18/ab5e/79f048998979/a843f17ebe1f/01306498800-b/01306498800-b.jpg?ts=1770882983186&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Short Moletom</h3>
-                        <p class="price">R$ 90,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Short Moletom Urban', 90)">Comprar</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <p>© 2026 3F STORE — Todos os direitos reservados</p>
+        <div class="card-body">
+          <h2 class="card-name" itemprop="name">${p.name}</h2>
+          <div class="card-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="priceCurrency" content="BRL">
+            <span itemprop="price" content="${p.price}">${formatPrice(p.price)}</span>
+          </div>
+          <button class="card-add" onclick="event.stopPropagation(); openPDP(${p.id})" aria-label="Ver mais sobre ${p.name}">Ver mais</button>
         </div>
-    </footer>
+      `;
+      grid.appendChild(card);
+    });
+  }
+  renderProducts();
 
-    <script>
-        // ========== ESTADO ==========
-        let cart = JSON.parse(localStorage.getItem('3f_cart')) || [];
-        let userData = JSON.parse(localStorage.getItem('3f_user')) || null;
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProducts(btn.dataset.cat);
+    });
+  });
+  document.querySelectorAll('nav.categories a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const cat = link.dataset.cat;
+      document.querySelectorAll('.cat-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.cat === cat);
+      });
+      renderProducts(cat);
+      document.getElementById('grid').scrollIntoView({behavior:'smooth'});
+    });
+  });
 
-        const productColors = {
-            'camisa-canelada': {
-                cinza: [
-                    'https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto',
-                    'https://static.bershka.net/assets/public/b16f/3f70/5d944bcebfb1/cabe6f5c70d9/02481001810-a4o/02481001810-a4o.jpg?ts=1778481712058&w=850&f=auto',
-                    'https://static.bershka.net/assets/public/cc17/274e/c90c43329032/9fd973ab4c50/02481001810-b/02481001810-b.jpg?ts=1778481711714&w=850&f=auto'
-                ],
-                preta: [
-                    'https://static.bershka.net/assets/public/4e5d/50fd/35444b138af5/b9ecef17a361/02481538800-p/02481538800-p.jpg?ts=1779176039421&w=850&f=auto',
-                    'https://static.bershka.net/assets/public/5891/5dbc/a4a64dcf9959/57011a6c8720/02481538800-a4o/02481538800-a4o.jpg?ts=1778681067692&w=850&f=auto',
-                    'https://static.bershka.net/assets/public/294c/73ee/964b4209b0c8/970f3fd5f33c/02481538800-b/02481538800-b.jpg?ts=1778681066847&w=850&f=auto'
-                ],
-                branca: [
-                    'https://static.bershka.net/assets/public/3886/8466/1a6a4ce9a258/6fa55d92317c/02481302812-p/02481302812-p.jpg?ts=1785234866221&w=850&f=auto',
-                    'https://static.bershka.net/assets/public/764b/034b/aa094ba5b4ab/5b4de8b19b79/02481302812-a4o/02481302812-a4o.jpg?ts=1784627734930&w=850&f=auto',
-                    'https://static.bershka.net/assets/public/2d62/fcc5/4edb4231b2a8/032b44e96061/02481302812-b/02481302812-b.jpg?ts=1784627735032&w=850&f=auto'
-                ]
-            }
-        };
+  function setMainImage(src){
+    const el = document.getElementById('pdpImg');
+    if (src) {
+      el.innerHTML = `<img src="${src}" alt="${productAlt()}" width="600" height="800">`;
+    } else {
+      el.innerHTML = '<span>IMAGEM EM BREVE</span>';
+    }
+  }
 
-        // ========== INICIALIZAÇÃO ==========
-        document.addEventListener('DOMContentLoaded', () => {
-            updateCartUI();
-            updateUserUI();
-            document.querySelectorAll('.modal-overlay').forEach(modal => {
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) modal.style.display = 'none';
-                });
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape') {
-                    closeLoginModal();
-                    closeCartModal();
-                }
-            });
-        });
+  function openPDP(id){
+    currentProduct = products.find(p => p.id === id);
+    if (!currentProduct) return;
 
-        // ========== TOAST ==========
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.className = 'toast show ' + type;
-            setTimeout(() => toast.classList.remove('show'), 2800);
-        }
+    selectedSize = null;
+    selectedColor = null;
 
-        // ========== MODAIS ==========
-        function openLoginModal() {
-            document.getElementById('login-modal').style.display = 'flex';
-            switchForm('login');
-        }
-        function closeLoginModal() {
-            document.getElementById('login-modal').style.display = 'none';
-        }
-        function openCartModal() {
-            renderCart();
-            document.getElementById('cart-modal').style.display = 'flex';
-        }
-        function closeCartModal() {
-            document.getElementById('cart-modal').style.display = 'none';
-        }
-        function switchForm(type) {
-            document.getElementById('login-form').style.display = (type === 'login') ? 'block' : 'none';
-            document.getElementById('register-form').style.display = (type === 'register') ? 'block' : 'none';
-        }
+    document.title = `${currentProduct.name} | URBE Streetwear`;
+    // schema do produto ativo
+    let schemaEl = document.getElementById('productSchema');
+    if (!schemaEl) {
+      schemaEl = document.createElement('script');
+      schemaEl.type = 'application/ld+json';
+      schemaEl.id = 'productSchema';
+      document.head.appendChild(schemaEl);
+    }
+    schemaEl.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": currentProduct.name,
+      "description": currentProduct.obs,
+      "category": currentProduct.cat,
+      "brand": { "@type": "Brand", "name": "URBE" },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "BRL",
+        "price": currentProduct.price,
+        "availability": "https://schema.org/InStock"
+      },
+      "image": (function(){
+        const cover = getProductCover(currentProduct);
+        return cover ? [cover] : [];
+      })()
+    });
 
-        // ========== USUÁRIO ==========
-        function handleAuth(type) {
-            if (type === 'register') {
-                const name = document.getElementById('reg-name').value.trim();
-                const email = document.getElementById('reg-email').value.trim();
-                const pass = document.getElementById('reg-pass').value;
-                const street = document.getElementById('reg-street').value.trim();
-                const city = document.getElementById('reg-city').value.trim();
-                if (!name || !email || !pass || !street) {
-                    showToast('Preencha nome, e-mail, senha e endereço!', 'error');
-                    return;
-                }
-                userData = { name, email, street, city: city || '' };
-                localStorage.setItem('3f_user', JSON.stringify(userData));
-                showToast(`Bem-vindo(a), ${name}! Cadastro realizado.`);
-            } else {
-                const email = document.getElementById('login-email').value.trim();
-                const pass = document.getElementById('login-pass').value;
-                if (!email || !pass) {
-                    showToast('Preencha e-mail e senha!', 'error');
-                    return;
-                }
-                if (userData && userData.email === email) {
-                    showToast(`Olá de novo, ${userData.name}!`);
-                } else if (userData) {
-                    showToast(`Olá, ${userData.name}!`);
-                } else {
-                    userData = { name: email.split('@')[0], email, street: 'Endereço não informado', city: '' };
-                    localStorage.setItem('3f_user', JSON.stringify(userData));
-                    showToast('Login realizado!');
-                }
-            }
-            updateUserUI();
-            closeLoginModal();
-        }
+    document.getElementById('pdpCat').textContent = currentProduct.cat;
+    document.getElementById('pdpName').textContent = currentProduct.name;
+    document.getElementById('pdpPrice').textContent = formatPrice(currentProduct.price);
+    document.getElementById('pdpInstallment').textContent = 
+      `ou 3x de ${formatPrice(currentProduct.price / 3)} sem juros`;
 
-        function logout() {
-            userData = null;
-            localStorage.removeItem('3f_user');
-            updateUserUI();
-            showToast('Você saiu da conta.');
-        }
+    const hasColors = currentProduct.colors && currentProduct.colors.length > 0;
+    const colorSection = document.getElementById('pdpColorSection');
 
-        function updateUserUI() {
-            const area = document.getElementById('user-area');
-            if (userData) {
-                area.innerHTML = `
-                    <span class="user-name" title="${userData.email}">Olá, ${userData.name.split(' ')[0]}</span>
-                    <button class="logout-btn" onclick="logout()">Sair</button>
-                `;
-            } else {
-                area.innerHTML = `<button class="login-btn" onclick="openLoginModal()">Entrar</button>`;
-            }
-        }
+    if (hasColors) {
+      colorSection.style.display = '';
+      // start with first color's images if available
+      const firstColor = currentProduct.colors[0];
+      const imgs = (firstColor.images && firstColor.images.length)
+        ? firstColor.images
+        : (currentProduct.images || []);
+      renderGallery(imgs);
 
-        // ========== PRODUTO ==========
-        function selectSize(btn) {
-            const parent = btn.parentElement;
-            parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-        }
+      document.getElementById('pdpColors').innerHTML = currentProduct.colors.map(c => 
+        `<button class="color-btn" style="--swatch:${c.hex}" data-color="${c.name}" onclick="selectColor('${c.name}')" title="${c.name}"></button>`
+      ).join('');
+      document.getElementById('pdpColorLabel').textContent = '';
+    } else {
+      colorSection.style.display = 'none';
+      renderGallery(currentProduct.images || []);
+      document.getElementById('pdpColors').innerHTML = '';
+      document.getElementById('pdpColorLabel').textContent = '';
+    }
 
-        function changeImage(thumb) {
-            const container = thumb.parentElement.parentElement;
-            const mainImg = container.querySelector('.main-display-img');
-            mainImg.src = thumb.src;
-            container.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
-            thumb.classList.add('active');
-        }
+    document.getElementById('pdpSizes').innerHTML = currentProduct.sizes.map(s => 
+      `<button class="size-btn" data-size="${s}" onclick="selectSize('${s}')">${s}</button>`
+    ).join('');
 
-        function selectColor(btn) {
-            const card = btn.closest('.product-card');
-            const productId = card.dataset.product;
-            const color = btn.dataset.color;
+    document.getElementById('pdpObs').innerHTML = `
+      <strong>Observações</strong>
+      ${currentProduct.obs}
+    `;
 
-            const colorParent = btn.parentElement;
-            colorParent.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+    updatePDPButton();
+    document.getElementById('pdp').classList.add('show');
+    document.body.style.overflow = 'hidden';
+  }
 
-            if (productColors[productId] && productColors[productId][color]) {
-                const images = productColors[productId][color];
-                const mainImg = card.querySelector('.main-display-img');
-                const thumbs = card.querySelectorAll('.thumb');
+  function closePDP(){
+    document.getElementById('pdp').classList.remove('show');
+    document.body.style.overflow = '';
+    currentProduct = null;
+    document.title = 'URBE — Loja de Streetwear | Camisas, Moletons, Conjuntos e Shorts';
+    const schemaEl = document.getElementById('productSchema');
+    if (schemaEl) schemaEl.remove();
+  }
 
-                mainImg.src = images[0];
-                thumbs.forEach((thumb, i) => {
-                    if (images[i]) {
-                        thumb.src = images[i];
-                        thumb.dataset.color = color;
-                    }
-                });
-                thumbs.forEach(t => t.classList.remove('active'));
-                if (thumbs[0]) thumbs[0].classList.add('active');
-            }
-        }
+  function selectSize(size){
+    selectedSize = size;
+    document.querySelectorAll('#pdpSizes .size-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.size === size);
+    });
+    updatePDPButton();
+  }
 
-        // ========== CARRINHO ==========
-        function addToCart(productName, price) {
-            if (!userData) {
-                showToast('Faça login para comprar!', 'error');
-                openLoginModal();
-                return;
-            }
+  function selectColor(color){
+    selectedColor = color;
+    document.querySelectorAll('#pdpColors .color-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.color === color);
+    });
+    document.getElementById('pdpColorLabel').textContent = color;
 
-            const card = event.target.closest('.product-card');
-            const sizeBtn = card.querySelector('.size-btn.active');
-            if (!sizeBtn) {
-                showToast('Selecione um tamanho!', 'error');
-                return;
-            }
-            const size = sizeBtn.innerText;
-            const colorBtn = card.querySelector('.color-btn.active');
-            const color = colorBtn ? colorBtn.title : null;
+    // troca galeria se a cor tiver imagens próprias
+    if (currentProduct) {
+      const colorObj = currentProduct.colors.find(c => c.name === color);
+      if (colorObj && colorObj.images && colorObj.images.length) {
+        renderGallery(colorObj.images);
+      }
+    }
+    updatePDPButton();
+  }
 
-            const existing = cart.find(item =>
-                item.name === productName &&
-                item.size === size &&
-                item.color === color
-            );
+  function productHasColors(p){
+    return p && p.colors && p.colors.length > 0;
+  }
 
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({
-                    id: Date.now() + Math.random(),
-                    name: productName,
-                    price: price,
-                    size: size,
-                    color: color,
-                    qty: 1
-                });
-            }
+  function updatePDPButton(){
+    const btn = document.getElementById('pdpAddBtn');
+    const hint = document.getElementById('pdpHint');
+    const needsColor = productHasColors(currentProduct);
+    // botão sempre clicável — validação com notificação no clique
+    btn.disabled = false;
 
-            saveCart();
-            updateCartUI();
-            showToast(`${productName} adicionado ao carrinho!`);
-        }
+    if (!selectedSize){
+      hint.textContent = needsColor ? 'Selecione tamanho e cor' : 'Selecione o tamanho';
+      return;
+    }
+    if (needsColor && !selectedColor){
+      hint.textContent = 'Selecione a cor';
+      return;
+    }
+    hint.textContent = needsColor
+      ? `${selectedSize} · ${selectedColor}`
+      : selectedSize;
+  }
 
-        function saveCart() {
-            localStorage.setItem('3f_cart', JSON.stringify(cart));
-        }
+  function showToast(message, type = 'warn'){
+    const wrap = document.getElementById('toastWrap');
+    const el = document.createElement('div');
+    el.className = `toast ${type}`;
+    el.textContent = message;
+    wrap.appendChild(el);
+    requestAnimationFrame(() => el.classList.add('show'));
+    setTimeout(() => {
+      el.classList.remove('show');
+      setTimeout(() => el.remove(), 280);
+    }, 2600);
+  }
 
-        function updateCartUI() {
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            const badge = document.getElementById('cart-count');
-            badge.innerText = totalQty;
-            badge.classList.toggle('has-items', totalQty > 0);
-        }
+  function flyToCart(imgSrc, startEl){
+    const cartBtn = document.getElementById('cartBtn');
+    if (!cartBtn) return;
 
-        function renderCart() {
-            const container = document.getElementById('cart-items');
-            const totalEl = document.getElementById('cart-total-value');
-            const checkoutBtn = document.getElementById('checkout-btn');
+    const startRect = startEl
+      ? startEl.getBoundingClientRect()
+      : { left: window.innerWidth / 2 - 32, top: window.innerHeight / 2 - 40, width: 64, height: 80 };
+    const endRect = cartBtn.getBoundingClientRect();
 
-            if (cart.length === 0) {
-                container.innerHTML = `
-                    <div class="cart-empty">
-                        <p>🛒</p>
-                        <p>Seu carrinho está vazio</p>
-                        <small>Adicione produtos para continuar</small>
-                    </div>
-                `;
-                totalEl.innerText = 'R$ 0,00';
-                checkoutBtn.disabled = true;
-                return;
-            }
+    const ghost = document.createElement('div');
+    ghost.className = 'fly-item' + (imgSrc ? '' : ' no-img');
+    if (imgSrc) {
+      ghost.innerHTML = `<img src="${imgSrc}" alt="">`;
+    } else {
+      ghost.textContent = 'ITEM';
+    }
 
-            checkoutBtn.disabled = false;
-            let total = 0;
-            container.innerHTML = cart.map((item, index) => {
-                const sub = item.price * item.qty;
-                total += sub;
-                return `
-                    <div class="cart-item">
-                        <div class="cart-item-info">
-                            <strong>${item.name}</strong>
-                            <span>${item.size}${item.color ? ' · ' + item.color : ''}</span>
-                            <span class="cart-item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</span>
-                        </div>
-                        <div class="cart-item-actions">
-                            <button class="qty-btn" onclick="changeQty(${index}, -1)">−</button>
-                            <span class="qty-value">${item.qty}</span>
-                            <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
-                            <button class="remove-btn" onclick="removeItem(${index})" title="Remover">🗑️</button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+    const startX = startRect.left + (startRect.width - 64) / 2;
+    const startY = startRect.top + (startRect.height - 80) / 2;
+    const endX = endRect.left + endRect.width / 2 - 16;
+    const endY = endRect.top + endRect.height / 2 - 20;
 
-            totalEl.innerText = 'R$ ' + total.toFixed(2).replace('.', ',');
-        }
+    ghost.style.left = startX + 'px';
+    ghost.style.top = startY + 'px';
+    document.body.appendChild(ghost);
 
-        function changeQty(index, delta) {
-            cart[index].qty += delta;
-            if (cart[index].qty <= 0) cart.splice(index, 1);
-            saveCart();
-            updateCartUI();
-            renderCart();
-        }
+    // force reflow then animate
+    ghost.getBoundingClientRect();
+    requestAnimationFrame(() => {
+      ghost.style.transform = `translate(${endX - startX}px, ${endY - startY}px) scale(0.25)`;
+      ghost.style.opacity = '0.2';
+    });
 
-        function removeItem(index) {
-            const name = cart[index].name;
-            cart.splice(index, 1);
-            saveCart();
-            updateCartUI();
-            renderCart();
-            showToast(`${name} removido.`);
-        }
+    setTimeout(() => {
+      ghost.remove();
+      // badge bump
+      const badge = document.getElementById('cartCount');
+      badge.classList.remove('bump');
+      void badge.offsetWidth;
+      badge.classList.add('bump');
+      setTimeout(() => badge.classList.remove('bump'), 300);
+    }, 720);
+  }
 
-        function clearCart() {
-            if (cart.length === 0) return;
-            if (!confirm('Limpar todo o carrinho?')) return;
-            cart = [];
-            saveCart();
-            updateCartUI();
-            renderCart();
-            showToast('Carrinho limpo.');
-        }
+  function addFromPDP(){
+    if (!currentProduct) return;
+    const needsColor = productHasColors(currentProduct);
 
-        function checkout() {
-            if (!userData) {
-                showToast('Faça login para finalizar!', 'error');
-                closeCartModal();
-                openLoginModal();
-                return;
-            }
-            if (cart.length === 0) {
-                showToast('Carrinho vazio!', 'error');
-                return;
-            }
+    if (!selectedSize){
+      showToast(needsColor
+        ? 'Selecione o tamanho e a cor antes de adicionar'
+        : 'Selecione o tamanho antes de adicionar', 'warn');
+      // highlight size section
+      const sizeBox = document.getElementById('pdpSizes');
+      if (sizeBox) {
+        sizeBox.style.outline = '1px solid #111';
+        setTimeout(() => { sizeBox.style.outline = ''; }, 1200);
+      }
+      return;
+    }
+    if (needsColor && !selectedColor){
+      showToast('Selecione a cor antes de adicionar', 'warn');
+      const colorBox = document.getElementById('pdpColors');
+      if (colorBox) {
+        colorBox.style.outline = '1px solid #111';
+        setTimeout(() => { colorBox.style.outline = ''; }, 1200);
+      }
+      return;
+    }
 
-            const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-            const itemsText = cart.map(i =>
-                `• ${i.name} (${i.size}${i.color ? ', ' + i.color : ''}) x${i.qty}`
-            ).join('\n');
+    const colorKey = needsColor ? selectedColor : '-';
+    const key = `${currentProduct.id}|${selectedSize}|${colorKey}`;
+    cart[key] = (cart[key] || 0) + 1;
 
-            alert(
-                `✅ Pedido confirmado!\n\n` +
-                `Cliente: ${userData.name}\n` +
-                `Entrega: ${userData.street}${userData.city ? ', ' + userData.city : ''}\n\n` +
-                `Itens:\n${itemsText}\n\n` +
-                `Total: R$ ${total.toFixed(2).replace('.', ',')}\n\n` +
-                `Obrigado por comprar na 3F STORE!`
-            );
+    // imagem para animação
+    let imgSrc = null;
+    if (needsColor) {
+      const colorObj = currentProduct.colors.find(c => c.name === selectedColor);
+      if (colorObj && colorObj.images && colorObj.images[0]) imgSrc = colorObj.images[0];
+    }
+    if (!imgSrc) imgSrc = getProductCover(currentProduct);
 
-            cart = [];
-            saveCart();
-            updateCartUI();
-            closeCartModal();
-            showToast('Pedido finalizado com sucesso!');
-        }
-    </script>
+    const startEl = document.getElementById('pdpImg');
+    flyToCart(imgSrc, startEl);
+    updateCartUI();
+    showToast('Adicionado ao carrinho', 'success');
+
+    // fecha PDP depois da animação e abre o carrinho
+    setTimeout(() => {
+      closePDP();
+      toggleCart(true);
+    }, 750);
+  }
+
+  function changeQty(key, delta){
+    cart[key] = (cart[key] || 0) + delta;
+    if (cart[key] <= 0) delete cart[key];
+    updateCartUI();
+  }
+
+  function removeFromCart(key){
+    delete cart[key];
+    updateCartUI();
+  }
+
+  function updateCartUI(){
+    const keys = Object.keys(cart);
+    const totalQty = keys.reduce((sum, k) => sum + cart[k], 0);
+    cartCountEl.textContent = totalQty;
+    cartCountEl.classList.toggle('is-zero', totalQty === 0);
+
+    if (keys.length === 0){
+      cartItemsEl.innerHTML = `<div class="empty-msg">Seu carrinho está vazio.<br>Adicione produtos para continuar.</div>`;
+      cartSubtotalEl.textContent = formatPrice(0);
+      return;
+    }
+
+    let subtotal = 0;
+    cartItemsEl.innerHTML = keys.map(key => {
+      const [id, size, color] = key.split('|');
+      const p = products.find(x => x.id == id);
+      const qty = cart[key];
+      subtotal += p.price * qty;
+
+      let thumbSrc = null;
+      if (color && color !== '-') {
+        const colorObj = p.colors && p.colors.find(c => c.name === color);
+        if (colorObj && colorObj.images && colorObj.images[0]) thumbSrc = colorObj.images[0];
+      }
+      if (!thumbSrc) thumbSrc = getProductCover(p);
+      const thumb = thumbSrc ? `<img src="${thumbSrc}" alt="">` : '';
+      const meta = (color && color !== '-') ? `${size} · ${color}` : size;
+
+      return `
+        <div class="cart-item">
+          <div class="thumb">${thumb}</div>
+          <div class="info">
+            <div class="name">${p.name}</div>
+            <div class="meta">${meta}</div>
+            <div class="qty-row">
+              <button onclick="changeQty('${key}', -1)">−</button>
+              <span>${qty}</span>
+              <button onclick="changeQty('${key}', 1)">+</button>
+              <span class="item-price">${formatPrice(p.price * qty)}</span>
+            </div>
+            <button class="remove-item" onclick="removeFromCart('${key}')">remover</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+    cartSubtotalEl.textContent = formatPrice(subtotal);
+  }
+  updateCartUI();
+
+  const overlay = document.getElementById('overlay');
+  const cartDrawer = document.getElementById('cartDrawer');
+  const authModal = document.getElementById('authModal');
+
+  function toggleCart(show){
+    cartDrawer.classList.toggle('show', show);
+    overlay.classList.toggle('show', show);
+  }
+
+  function openAuth(){
+    document.getElementById('authNote').textContent = "Acesse sua conta";
+    authModal.classList.add('show');
+    overlay.classList.add('show');
+  }
+
+  function closeAll(){
+    cartDrawer.classList.remove('show');
+    authModal.classList.remove('show');
+    overlay.classList.remove('show');
+  }
+
+  function switchTab(tab){
+    document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.tab === tab));
+    document.getElementById('loginPanel').classList.toggle('active', tab === 'login');
+    document.getElementById('cadastroPanel').classList.toggle('active', tab === 'cadastro');
+  }
+
+  function handleCheckout(){
+    if (Object.keys(cart).length === 0){
+      showToast('Seu carrinho está vazio', 'warn');
+      return;
+    }
+    if (!isLoggedIn){
+      document.getElementById('authNote').textContent = "Só mais um passo pra comprar";
+      cartDrawer.classList.remove('show');
+      authModal.classList.add('show');
+      overlay.classList.add('show');
+      return;
+    }
+    finalizarCompra();
+  }
+
+  function handleAuthSubmit(e){
+    e.preventDefault();
+    isLoggedIn = true;
+    closeAll();
+    if (Object.keys(cart).length > 0) finalizarCompra();
+    else showToast('Login realizado com sucesso', 'success');
+    return false;
+  }
+
+  function finalizarCompra(){
+    const totalItems = Object.keys(cart).reduce((s, k) => s + cart[k], 0);
+    cart = {};
+    updateCartUI();
+    closeAll();
+    showToast(`Pedido confirmado! ${totalItems} item(ns) — obrigado pela compra.`, 'success');
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closePDP();
+      closeAll();
+    }
+  });
+</script>
+
 </body>
-
 </html>
